@@ -1,20 +1,20 @@
 class Graph {
   constructor() {
-    this._adjacencyList = new Map()
+    this._adjacencyList = {}
   }
 
-  addVertex(vertext) {
-    this._adjacencyList.set(vertext, [])
+  addVertex(vertex) {
+    this._adjacencyList[vertex] = []
   }
 
-  addEdge(vertex1, vertext2) {
-    this._adjacencyList.get(vertex1).push(vertext2)
-    this._adjacencyList.get(vertext2).push(vertex1)
+  addEdge(vertex1, vertex2) {
+    this._adjacencyList[vertex1].push(vertex2)
+    this._adjacencyList[vertex2].push(vertex1)
   }
 
   printAdjacencyList() {
-    for (let [vertexKey, adjacencyList] of this._adjacencyList) {
-      console.log(`${vertexKey} -> ${adjacencyList.toString()}`)
+    for (let vertexKey in this._adjacencyList) {
+      console.log(`${vertexKey} -> ${this._adjacencyList[vertexKey].toString()}`)
     }
   }
 
@@ -29,7 +29,7 @@ class Graph {
       const currentVertex = queue.shift()
       console.log(currentVertex)
 
-      const childrenVertices = this._adjacencyList.get(currentVertex)
+      const childrenVertices = this._adjacencyList[currentVertex]
       for (let i in childrenVertices) {
         const nextVertex = childrenVertices[i]
 
@@ -51,7 +51,7 @@ class Graph {
     visitedVertices[currentVertex] = true
     console.log(currentVertex)
 
-    const childrenVertices = this._adjacencyList.get(currentVertex)
+    const childrenVertices = this._adjacencyList[currentVertex]
       for (let i in childrenVertices) {
         const nextVertex = childrenVertices[i]
 

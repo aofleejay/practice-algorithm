@@ -25,10 +25,9 @@ class Graph {
 
     while (queue.length !== 0) {
       const currentVertex = queue.shift()
-      console.log(currentVertex)
 
       const childrenVertices = this._adjacencyList[currentVertex]
-      for (let i in childrenVertices) {
+      for (const i in childrenVertices) {
         const nextVertex = childrenVertices[i]
 
         if (!visitedVertices[nextVertex]) {
@@ -47,15 +46,14 @@ class Graph {
 
   dfsRecursive(currentVertex, visitedVertices) {
     visitedVertices[currentVertex] = true
-    console.log(currentVertex)
 
     const childrenVertices = this._adjacencyList[currentVertex]
-      for (let i in childrenVertices) {
-        const nextVertex = childrenVertices[i]
+    for (const i in childrenVertices) {
+      const nextVertex = childrenVertices[i]
 
-        if (!visitedVertices[nextVertex]) {
-          this.dfsRecursive(nextVertex, visitedVertices)
-        }
+      if (!visitedVertices[nextVertex]) {
+        this.dfsRecursive(nextVertex, visitedVertices)
+      }
     }
   }
 }

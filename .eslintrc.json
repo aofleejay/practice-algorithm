@@ -3,5 +3,8 @@
   "rules": {
     "semi": ["error", "never"],
     "no-underscore-dangle": "off"
+  },
+  "env": {
+    "jest": true
   }
 }

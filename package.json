@@ -10,14 +10,16 @@
     "type": "git",
     "url": "git+https://github.com/aofleejay/practice-algorithm.git"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "keywords": ["JavaScript algorithms"],
+  "author": "Kunapot Pairat",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/aofleejay/practice-algorithm/issues"
   },
   "homepage": "https://github.com/aofleejay/practice-algorithm#readme",
   "devDependencies": {
+    "babel-cli": "6.26.0",
+    "babel-preset-env": "1.7.0",
     "eslint": "5.4.0",
     "eslint-config-airbnb-base": "13.1.0",
     "eslint-plugin-import": "2.14.0",

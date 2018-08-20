@@ -12,6 +12,10 @@ class Graph {
     this._adjacencyList[vertex2].push(vertex1)
   }
 
+  getAdjacencyList() {
+    return this._adjacencyList
+  }
+
   printAdjacencyList() {
     for (let vertexKey in this._adjacencyList) {
       console.log(`${vertexKey} -> ${this._adjacencyList[vertexKey].toString()}`)

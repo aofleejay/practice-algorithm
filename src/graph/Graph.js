@@ -16,12 +16,6 @@ class Graph {
     return this._adjacencyList
   }
 
-  printAdjacencyList() {
-    for (let vertexKey in this._adjacencyList) {
-      console.log(`${vertexKey} -> ${this._adjacencyList[vertexKey].toString()}`)
-    }
-  }
-
   bfs(startVertex) {
     const visitedVertices = {}
     const queue = []

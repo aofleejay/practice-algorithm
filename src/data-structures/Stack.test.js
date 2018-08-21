@@ -35,4 +35,18 @@ describe('Stack', () => {
     stack.pop()
     expect(stack.isEmpty()).toEqual(true)
   })
+
+  it('Should peek top of stack correctly', () => {
+    const stack = new Stack()
+    stack.push('A')
+    stack.push('B')
+
+    expect(stack.peek()).toEqual('B')
+  })
+
+  it('Should peek empty to equal null', () => {
+    const stack = new Stack()
+
+    expect(stack.peek()).toEqual(null)
+  })
 })

@@ -15,6 +15,14 @@ class Stack {
     return this._items.pop()
   }
 
+  peek() {
+    if (this.isEmpty()) {
+      return null
+    }
+
+    return this._items[this._items.length - 1]
+  }
+
   isEmpty() {
     return this._items.length === 0
   }

@@ -1,13 +1,13 @@
 import Stack from './Stack'
 
 describe('Stack', () => {
-  it('Should contain empty array', () => {
+  it('Should contain empty array when stack created', () => {
     const stack = new Stack()
 
     expect(stack.getItems()).toEqual([])
   })
 
-  it('Should push correctly', () => {
+  it('Should push item correctly', () => {
     const stack = new Stack()
     stack.push('A')
     stack.push('B')
@@ -15,7 +15,7 @@ describe('Stack', () => {
     expect(stack.getItems()).toEqual(['A', 'B'])
   })
 
-  it('Should dequeue correctly', () => {
+  it('Should return top most item when pop from stack', () => {
     const stack = new Stack()
     stack.push('A')
     stack.push('B')
@@ -23,6 +23,14 @@ describe('Stack', () => {
 
     expect(stack.getItems()).toEqual(['A'])
     expect(popedItem).toEqual('B')
+  })
+
+  it('Should return null when pop empty stack', () => {
+    const stack = new Stack()
+    const popedItem = stack.pop()
+
+    expect(stack.getItems()).toEqual([])
+    expect(popedItem).toEqual(null)
   })
 
   it('Should check empty stack correctly', () => {
@@ -36,7 +44,7 @@ describe('Stack', () => {
     expect(stack.isEmpty()).toEqual(true)
   })
 
-  it('Should peek top of stack correctly', () => {
+  it('Should return top most stack when peek into stack', () => {
     const stack = new Stack()
     stack.push('A')
     stack.push('B')
@@ -44,7 +52,7 @@ describe('Stack', () => {
     expect(stack.peek()).toEqual('B')
   })
 
-  it('Should peek empty to equal null', () => {
+  it('Should return null when peek empty stack', () => {
     const stack = new Stack()
 
     expect(stack.peek()).toEqual(null)

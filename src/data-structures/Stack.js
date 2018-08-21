@@ -12,6 +12,10 @@ class Stack {
   }
 
   pop() {
+    if (this.isEmpty()) {
+      return null
+    }
+
     return this._items.pop()
   }
 

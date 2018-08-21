@@ -1,7 +1,7 @@
 import Queue from './Queue'
 
 describe('Queue', () => {
-  it('Should contain empty array', () => {
+  it('Should contain empty array when queue created', () => {
     const queue = new Queue()
 
     expect(queue.getItems()).toEqual([])
@@ -15,7 +15,7 @@ describe('Queue', () => {
     expect(queue.getItems()).toEqual(['A', 'B'])
   })
 
-  it('Should dequeue correctly', () => {
+  it('Should return first item when dequeued', () => {
     const queue = new Queue()
     queue.enqueue('A')
     queue.enqueue('B')
@@ -23,6 +23,14 @@ describe('Queue', () => {
 
     expect(queue.getItems()).toEqual(['B'])
     expect(dequeuedItem).toEqual('A')
+  })
+
+  it('Should return null when dequeue empty queue', () => {
+    const queue = new Queue()
+    const dequeuedItem = queue.dequeue()
+
+    expect(queue.getItems()).toEqual([])
+    expect(dequeuedItem).toEqual(null)
   })
 
   it('Should check empty queue correctly', () => {

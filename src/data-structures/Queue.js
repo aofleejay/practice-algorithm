@@ -12,6 +12,10 @@ class Queue {
   }
 
   dequeue() {
+    if (this.isEmpty()) {
+      return null
+    }
+
     return this._items.shift()
   }
 

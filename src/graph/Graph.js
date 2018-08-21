@@ -27,7 +27,7 @@ class Graph {
 
     while (!queue.isEmpty()) {
       const currentVertex = queue.dequeue()
-      console.log(currentVertex)
+
       const childrenVertices = this._adjacencyList[currentVertex]
       childrenVertices.forEach((nextVertex) => {
         if (!visitedVertices[nextVertex]) {

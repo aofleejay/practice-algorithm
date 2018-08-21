@@ -23,7 +23,7 @@ describe('Graph representation', () => {
     graph.addEdge(2, 8)
     graph.addEdge(3, 7)
     graph.addEdge(7, 8)
-
+    graph.dfs(0)
     expect(graph.getAdjacencyList()).toEqual({
       0: [1, 2, 3],
       1: [0, 4, 5],

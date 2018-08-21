@@ -27,14 +27,12 @@ class Graph {
       const currentVertex = queue.shift()
 
       const childrenVertices = this._adjacencyList[currentVertex]
-      for (const i in childrenVertices) {
-        const nextVertex = childrenVertices[i]
-
+      childrenVertices.forEach((nextVertex) => {
         if (!visitedVertices[nextVertex]) {
           queue.push(nextVertex)
           visitedVertices[nextVertex] = true
         }
-      }
+      })
     }
   }
 
@@ -45,16 +43,14 @@ class Graph {
   }
 
   dfsRecursive(currentVertex, visitedVertices) {
-    visitedVertices[currentVertex] = true
+    visitedVertices[currentVertex] = true // eslint-disable-line
 
     const childrenVertices = this._adjacencyList[currentVertex]
-    for (const i in childrenVertices) {
-      const nextVertex = childrenVertices[i]
-
+    childrenVertices.forEach((nextVertex) => {
       if (!visitedVertices[nextVertex]) {
         this.dfsRecursive(nextVertex, visitedVertices)
       }
-    }
+    })
   }
 }
 

@@ -1,3 +1,5 @@
+import Queue from '../data-structures/Queue'
+
 class Graph {
   constructor() {
     this._adjacencyList = {}
@@ -18,18 +20,18 @@ class Graph {
 
   bfs(startVertex) {
     const visitedVertices = {}
-    const queue = []
+    const queue = new Queue()
 
-    queue.push(startVertex)
+    queue.enqueue(startVertex)
     visitedVertices[startVertex] = true
 
-    while (queue.length !== 0) {
-      const currentVertex = queue.shift()
-
+    while (!queue.isEmpty()) {
+      const currentVertex = queue.dequeue()
+      console.log(currentVertex)
       const childrenVertices = this._adjacencyList[currentVertex]
       childrenVertices.forEach((nextVertex) => {
         if (!visitedVertices[nextVertex]) {
-          queue.push(nextVertex)
+          queue.enqueue(nextVertex)
           visitedVertices[nextVertex] = true
         }
       })

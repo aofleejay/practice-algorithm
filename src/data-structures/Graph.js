@@ -1,4 +1,4 @@
-import Queue from '../data-structures/Queue'
+import Queue from './Queue'
 
 class Graph {
   constructor() {

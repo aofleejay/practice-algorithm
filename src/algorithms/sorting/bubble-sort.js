@@ -1,17 +1,13 @@
-const numbers = [9, 5, 3, 4, 2, 8, 1, 7, 0, 6]
-
 const bubbleSort = (array) => {
-  let temp
-  for (let i = 0; i < array.length; i++) {
-    for (let j = 0; j < array.length - i; j++) {
+  for (let i = 0, temp; i < array.length; i += 1) {
+    for (let j = 0; j < array.length - i; j += 1) {
       if (array[j] > array[j + 1]) {
         temp = array[j + 1]
-        array[j + 1] = array[j]
-        array[j] = temp
+        array[j + 1] = array[j] // eslint-disable-line
+        array[j] = temp // eslint-disable-line
       }
     }
   }
 }
 
-bubbleSort(numbers)
-console.log(`Sorted numbers: ${numbers.join()}.`)
+export default bubbleSort

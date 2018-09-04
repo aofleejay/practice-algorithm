@@ -1,4 +1,5 @@
 class Node {
+  private value: any
   constructor(value, next = null) {
     this._value = value
     this._next = next

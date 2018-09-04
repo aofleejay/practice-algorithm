@@ -1,4 +1,9 @@
-const binarySearch = (sortedArray, element, leftIndex, rightIndex) => {
+const binarySearch = (
+  sortedArray: number[],
+  element: number,
+  leftIndex: number,
+  rightIndex: number,
+): number => {
   const middleIndex = Math.floor((rightIndex + leftIndex) / 2)
 
   if (leftIndex > rightIndex) {

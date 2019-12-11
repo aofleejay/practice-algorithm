@@ -13,10 +13,6 @@ class Queue<Item> {
   }
 
   dequeue(): Item | undefined {
-    if (this.isEmpty()) {
-      return undefined
-    }
-
     return this.items.shift()
   }
 

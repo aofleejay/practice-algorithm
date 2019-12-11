@@ -13,18 +13,10 @@ class Stack<Item> {
   }
 
   pop(): Item | undefined {
-    if (this.isEmpty()) {
-      return undefined
-    }
-
     return this.items.pop()
   }
 
   peek(): Item | undefined {
-    if (this.isEmpty()) {
-      return undefined
-    }
-
     return this.items[this.items.length - 1]
   }
 

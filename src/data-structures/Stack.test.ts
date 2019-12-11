@@ -25,12 +25,12 @@ describe('Stack', () => {
     expect(popedItem).toEqual('B')
   })
 
-  it('Should return null when pop empty stack', () => {
+  it('Should return undefined when pop empty stack', () => {
     const stack = new Stack()
     const popedItem = stack.pop()
 
     expect(stack.getItems()).toEqual([])
-    expect(popedItem).toEqual(null)
+    expect(popedItem).toEqual(undefined)
   })
 
   it('Should check empty stack correctly', () => {
@@ -52,9 +52,9 @@ describe('Stack', () => {
     expect(stack.peek()).toEqual('B')
   })
 
-  it('Should return null when peek empty stack', () => {
+  it('Should return undefined when peek empty stack', () => {
     const stack = new Stack()
 
-    expect(stack.peek()).toEqual(null)
+    expect(stack.peek()).toEqual(undefined)
   })
 })

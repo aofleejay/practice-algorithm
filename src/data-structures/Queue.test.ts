@@ -25,12 +25,12 @@ describe('Queue', () => {
     expect(dequeuedItem).toEqual('A')
   })
 
-  it('Should return null when dequeue empty queue', () => {
+  it('Should return undefined when dequeue empty queue', () => {
     const queue = new Queue()
     const dequeuedItem = queue.dequeue()
 
     expect(queue.getItems()).toEqual([])
-    expect(dequeuedItem).toEqual(null)
+    expect(dequeuedItem).toEqual(undefined)
   })
 
   it('Should check empty queue correctly', () => {

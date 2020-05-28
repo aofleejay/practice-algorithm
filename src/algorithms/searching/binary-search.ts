@@ -1,6 +1,6 @@
-const binarySearch = (
-  sortedArray: number[],
-  element: number,
+const binarySearch = <T = number>(
+  sortedArray: T[],
+  element: T,
   leftIndex: number,
   rightIndex: number,
 ): number => {
@@ -8,9 +8,12 @@ const binarySearch = (
 
   if (leftIndex > rightIndex) {
     return -1
-  } if (element === sortedArray[middleIndex]) {
+  }
+
+  if (element === sortedArray[middleIndex]) {
     return middleIndex
   }
+
   if (element < sortedArray[middleIndex]) {
     return binarySearch(sortedArray, element, leftIndex, middleIndex - 1)
   }
